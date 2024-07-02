@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  api:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/local/express/Dockerfile
+    volumes:
+      - /app/node_modules
+      - .:/app
+    depends_on:
+      - mongodb
+    ports:
+      - "5000":"5000"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      MONGO_URI: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongodb
+      FORCE_COLOR: 1
+    networks:
+      - invoicer
+  
+  mongodb:
+    image: mongo:5.06-focal
+    restart: always
+    ports: 
+      - "27017":"27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    volumes:
+      - mongodb-data:/data/db
+    
