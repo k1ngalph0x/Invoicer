@@ -1,0 +1,44 @@
+{
+  "name": "invoicer",
+  "version": "1.0.0",
+  "description": "An invoice application using mern stack",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon  backend/server.js",
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k1ngalph0x/Invoicer.git"
+  },
+  "keywords": [
+    "MERN",
+    "Invoice",
+    "ReduxToolkit"
+  ],
+  "author": "K1ngalph0x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k1ngalph0x/Invoicer/issues"
+  },
+  "homepage": "https://github.com/k1ngalph0x/Invoicer#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^5.3.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^7.3.1",
+    "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.4",
+    "morgan": "^1.10.0",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
